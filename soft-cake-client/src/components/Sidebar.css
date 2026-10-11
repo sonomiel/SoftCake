@@ -1,0 +1,708 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+/* ─── Variables ─── */
+:root {
+  --color-primary: #c4823c;
+  --color-primary-dark: #a86830;
+  --color-bg-dark: #2c1a0e;
+  --color-bg-darker: #231508;
+  --color-text-light: #f5e6d0;
+  --color-cream: #fdf6ee;
+  --font-main: 'Jost', system-ui, sans-serif;
+}
+
+/* ─── Reset & Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #3a2510;
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Layout Principal ─── */
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  padding: 24px;
+  background-color: var(--color-cream);
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* ══════════════════════════════════════
+   COMPONENTES PRIMEREACT — ESTILO PROPIO
+   ══════════════════════════════════════ */
+
+/* ─── Botones ─── */
+.p-button {
+  font-family: var(--font-main) !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  padding: 0.55rem 1.2rem !important;
+  transition: all 0.2s ease !important;
+  background-color: var(--color-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+  color: #fff !important;
+  letter-spacing: 0.02em !important;
+}
+
+.p-button:hover {
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+  box-shadow: 0 2px 8px rgba(196,130,60,0.35) !important;
+}
+
+.p-button:focus {
+  box-shadow: 0 0 0 3px rgba(196,130,60,0.25) !important;
+}
+
+/* Botón outlined */
+.p-button.p-button-outlined {
+  background-color: transparent !important;
+  color: var(--color-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+}
+
+.p-button.p-button-outlined:hover {
+  background-color: rgba(196,130,60,0.1) !important;
+}
+
+/* Botón texto */
+.p-button.p-button-text {
+  background-color: transparent !important;
+  color: var(--color-primary) !important;
+  border: none !important;
+}
+
+.p-button.p-button-text:hover {
+  background-color: rgba(196,130,60,0.1) !important;
+}
+
+/* Botón danger */
+.p-button.p-button-danger {
+  background-color: #ef4444 !important;
+  border-color: #ef4444 !important;
+}
+
+.p-button.p-button-danger:hover {
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
+
+/* ─── Inputs ─── */
+.p-inputtext {
+  font-family: var(--font-main) !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(196,130,60,0.35) !important;
+  padding: 0.55rem 0.9rem !important;
+  color: #3a2510 !important;
+  background: #fff !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.p-inputtext:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(196,130,60,0.2) !important;
+  outline: none !important;
+}
+
+.p-password input {
+  width: 100%;
+}
+
+/* ─── Cards ─── */
+.p-card {
+  border-radius: 12px !important;
+  border: 1px solid rgba(196,130,60,0.15) !important;
+  box-shadow: 0 2px 12px rgba(44,26,14,0.08) !important;
+  background: #fff !important;
+}
+
+.p-card .p-card-title {
+  font-family: var(--font-main) !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  color: var(--color-bg-dark) !important;
+}
+
+.p-card .p-card-content {
+  padding: 0.75rem 0 !important;
+  color: #5a3e28 !important;
+}
+
+/* ─── Tabla ─── */
+.p-datatable .p-datatable-thead > tr > th {
+  font-family: var(--font-main) !important;
+  background: var(--color-bg-dark) !important;
+  color: var(--color-text-light) !important;
+  font-weight: 500 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 0.85rem 1rem !important;
+  border: none !important;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  transition: background 0.15s !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  font-family: var(--font-main) !important;
+  font-size: 0.875rem !important;
+  color: #3a2510 !important;
+  padding: 0.75rem 1rem !important;
+  border-bottom: 1px solid rgba(196,130,60,0.1) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) {
+  background: rgba(196,130,60,0.04) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background: rgba(196,130,60,0.1) !important;
+}
+
+.p-datatable .p-paginator {
+  background: #fff !important;
+  border-top: 1px solid rgba(196,130,60,0.15) !important;
+  padding: 0.5rem !important;
+}
+
+.p-paginator .p-paginator-page.p-highlight {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+}
+
+/* ─── Dropdown ─── */
+.p-dropdown {
+  font-family: var(--font-main) !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(196,130,60,0.35) !important;
+}
+
+.p-dropdown:focus,
+.p-dropdown.p-focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(196,130,60,0.2) !important;
+}
+
+.p-dropdown-panel .p-dropdown-item:hover {
+  background: rgba(196,130,60,0.12) !important;
+}
+
+.p-dropdown-panel .p-dropdown-item.p-highlight {
+  background: rgba(196,130,60,0.2) !important;
+  color: var(--color-bg-dark) !important;
+}
+
+/* ─── Dialog ─── */
+.p-dialog .p-dialog-header {
+  font-family: var(--font-main) !important;
+  background: var(--color-bg-dark) !important;
+  color: var(--color-text-light) !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 1rem 1.5rem !important;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 1.5rem !important;
+}
+
+.p-dialog .p-dialog-footer {
+  padding: 0.75rem 1.5rem !important;
+  border-top: 1px solid rgba(196,130,60,0.15) !important;
+}
+
+/* ─── Toast ─── */
+.p-toast .p-toast-message {
+  border-radius: 10px !important;
+  font-family: var(--font-main) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-success {
+  background: #f0fdf4 !important;
+  border-left: 4px solid #22c55e !important;
+  color: #166534 !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-error {
+  background: #fef2f2 !important;
+  border-left: 4px solid #ef4444 !important;
+  color: #991b1b !important;
+}
+
+/* ─── Tag / Badge ─── */
+.p-tag {
+  font-family: var(--font-main) !important;
+  border-radius: 6px !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  padding: 0.25rem 0.6rem !important;
+}
+
+/* ══════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════ */
+.sidebar-container {
+  font-family: var(--font-main);
+  background: var(--color-bg-dark);
+  width: 280px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.sidebar-header {
+  background: var(--color-bg-darker);
+  border-bottom: 1px solid rgba(196,130,60,0.2);
+  padding: 1rem 1.2rem;
+}
+
+.sidebar-header i { color: var(--color-primary) !important; }
+
+.sidebar-header span {
+  color: var(--color-text-light) !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.user-info {
+  background: var(--color-bg-darker);
+  border-bottom: 1px solid rgba(196,130,60,0.2);
+  padding: 1rem 1.2rem;
+}
+
+.user-info .p-avatar {
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.user-info .font-bold { color: var(--color-text-light) !important; }
+.user-info .text-color-secondary {
+  color: rgba(245,230,208,0.5) !important;
+  font-size: 0.75rem;
+}
+
+.sidebar-container .flex-1.overflow-y-auto {
+  background: var(--color-bg-dark);
+  padding: 0.5rem 0;
+}
+
+.sidebar-container .p-menu {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0.25rem 0.6rem !important;
+}
+
+.sidebar-container .p-menuitem > .p-menuitem-content {
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.sidebar-container .p-menuitem > .p-menuitem-content:hover {
+  background: rgba(196,130,60,0.15) !important;
+  transform: translateX(3px) !important;
+}
+
+.sidebar-container .p-menuitem-link {
+  padding: 0.7rem 1rem !important;
+  border-radius: 8px !important;
+  gap: 0.6rem !important;
+}
+
+.sidebar-container .p-menuitem-icon {
+  color: rgba(245,230,208,0.5) !important;
+  font-size: 0.95rem !important;
+  transition: color 0.2s !important;
+}
+
+.sidebar-container .p-menuitem-text {
+  color: rgba(245,230,208,0.85) !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  transition: color 0.2s !important;
+}
+
+.sidebar-container .p-menuitem > .p-menuitem-content:hover .p-menuitem-icon,
+.sidebar-container .p-menuitem > .p-menuitem-content:hover .p-menuitem-text {
+  color: var(--color-text-light) !important;
+}
+
+.sidebar-container .p-menuitem-active > .p-menuitem-content {
+  background: rgba(196,130,60,0.25) !important;
+  border-left: 3px solid var(--color-primary) !important;
+}
+
+.sidebar-container .p-menuitem-active .p-menuitem-icon,
+.sidebar-container .p-menuitem-active .p-menuitem-text {
+  color: var(--color-primary) !important;
+  font-weight: 500 !important;
+}
+
+.sidebar-container .catalogos-menu { margin-top: 0.25rem; }
+
+.sidebar-container .catalogos-menu > .p-button {
+  background: transparent !important;
+  border: none !important;
+  border-top: 1px solid rgba(196,130,60,0.15) !important;
+  border-bottom: 1px solid rgba(196,130,60,0.15) !important;
+  border-radius: 0 !important;
+  color: rgba(245,230,208,0.4) !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  padding: 0.6rem 1.2rem !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  justify-content: flex-start !important;
+}
+
+.sidebar-container .catalogos-menu > .p-button:hover {
+  background: rgba(196,130,60,0.08) !important;
+  color: rgba(245,230,208,0.7) !important;
+}
+
+.sidebar-container .catalogos-menu > .p-button .p-button-icon {
+  color: rgba(196,130,60,0.6) !important;
+  font-size: 0.7rem !important;
+  margin-right: 0.5rem !important;
+}
+
+.sidebar-footer {
+  background: var(--color-bg-darker);
+  border-top: 1px solid rgba(196,130,60,0.2);
+  padding: 1rem 1.2rem;
+}
+
+.sidebar-footer .p-button-danger.p-button-outlined {
+  border-color: rgba(239,68,68,0.4) !important;
+  color: rgba(239,68,68,0.8) !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.05em !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+  justify-content: center !important;
+  background: transparent !important;
+}
+
+.sidebar-footer .p-button-danger.p-button-outlined:hover {
+  background: rgba(239,68,68,0.1) !important;
+  border-color: rgba(239,68,68,0.7) !important;
+  color: #ef4444 !important;
+}
+
+/* ─── Scroll ─── */
+.sidebar-container ::-webkit-scrollbar { width: 4px; }
+.sidebar-container ::-webkit-scrollbar-track { background: transparent; }
+.sidebar-container ::-webkit-scrollbar-thumb {
+  background: rgba(196,130,60,0.3);
+  border-radius: 4px;
+}
+.sidebar-container ::-webkit-scrollbar-thumb:hover {
+  background: rgba(196,130,60,0.6);
+}
+
+/* ══════════════════════════════════
+   COMPONENTES DE PÁGINA
+   ══════════════════════════════════ */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.inicio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  color: var(--color-bg-dark);
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.info-section { margin: 2rem 0; line-height: 1.8; }
+.company-info { color: #34495e; font-size: 1.1rem; margin-bottom: 1.5rem; }
+.contact-info { color: #2c3e50; font-size: 1rem; margin: 0.5rem 0; }
+.contact-details { color: #7f8c8d; font-size: 0.9rem; margin: 0.3rem 0; }
+
+.login-full-page { min-height: 100vh; }
+.login-container { height: 100%; }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  .title { font-size: 1.5rem; }
+  .subtitle { font-size: 1.2rem; }
+
+  .inicio-container {
+    padding: 1rem;
+    min-height: 70vh;
+  }
+
+  .login-container {
+    padding: 1rem;
+    justify-content: flex-start;
+    padding-top: 3rem;
+  }
+
+  .login-full-page { height: auto; }
+}
+/* ══════════════════════════════════
+   TAB MENU
+   ══════════════════════════════════ */
+.p-tabmenu {
+  font-family: var(--font-main) !important;
+}
+
+.p-tabmenu .p-tabmenu-nav {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(196,130,60,0.2) !important;
+  padding: 0 !important;
+  gap: 0.25rem !important;
+}
+
+.p-tabmenu .p-tabmenuitem .p-menuitem-link {
+  font-family: var(--font-main) !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  color: #7a5c3a !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  padding: 0.75rem 1.25rem !important;
+  margin-bottom: -2px !important;
+  letter-spacing: 0.03em !important;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease !important;
+  gap: 0.45rem !important;
+}
+
+.p-tabmenu .p-tabmenuitem .p-menuitem-link:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.p-tabmenu .p-tabmenuitem:not(.p-highlight) .p-menuitem-link:hover {
+  color: var(--color-primary) !important;
+  background: rgba(196,130,60,0.07) !important;
+  border-bottom-color: rgba(196,130,60,0.4) !important;
+}
+
+.p-tabmenu .p-tabmenuitem.p-highlight .p-menuitem-link {
+  color: var(--color-primary) !important;
+  font-weight: 500 !important;
+  background: transparent !important;
+  border-bottom: 2px solid var(--color-primary) !important;
+}
+
+.p-tabmenu .p-tabmenuitem .p-menuitem-link .p-menuitem-icon {
+  color: inherit !important;
+  font-size: 0.9rem !important;
+}
+
+.p-tabmenu .p-tabmenuitem .p-menuitem-link .p-menuitem-text {
+  color: inherit !important;
+  line-height: 1 !important;
+}
+
+/* Variante sobre fondo oscuro — agrega className="p-tabmenu-dark" al componente */
+.p-tabmenu-dark .p-tabmenu-nav {
+  border-bottom-color: rgba(196,130,60,0.25) !important;
+}
+
+.p-tabmenu-dark .p-tabmenuitem .p-menuitem-link {
+  color: rgba(245,230,208,0.55) !important;
+}
+
+.p-tabmenu-dark .p-tabmenuitem:not(.p-highlight) .p-menuitem-link:hover {
+  color: var(--color-text-light) !important;
+  background: rgba(196,130,60,0.12) !important;
+}
+
+.p-tabmenu-dark .p-tabmenuitem.p-highlight .p-menuitem-link {
+  color: var(--color-primary) !important;
+}
+
+/* ══════════════════════════════════
+   SIDEBAR RESPONSIVO
+   ══════════════════════════════════ */
+
+/* Botón hamburguesa — oculto en desktop */
+.sidebar-hamburger {
+    display: none;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1100;
+    background: var(--color-bg-dark);
+    border: none;
+    border-radius: 8px;
+    color: var(--color-primary);
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background 0.2s;
+}
+
+.sidebar-hamburger:hover {
+    background: var(--color-bg-darker);
+}
+
+/* Botón X dentro del sidebar — oculto en desktop */
+.sidebar-close-btn {
+    display: none !important;
+}
+
+/* Overlay */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1050;
+}
+
+/* Desktop: sidebar fijo normal */
+.sidebar-desktop { display: block; }
+.sidebar-mobile  { display: none; }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    /* Ocultar sidebar desktop */
+    .sidebar-desktop { display: none; }
+
+    /* Mostrar hamburguesa y overlay */
+    .sidebar-hamburger { display: flex; align-items: center; justify-content: center; }
+    .sidebar-overlay   { display: block; }
+    .sidebar-close-btn { display: inline-flex !important; }
+
+    /* Drawer móvil */
+    .sidebar-mobile {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        z-index: 1100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar-mobile--open {
+        transform: translateX(0);
+    }
+
+    /* Ajustar contenido principal para que no tenga margen en móvil */
+    .main-content {
+        margin-left: 0 !important;
+        padding-top: 60px !important; /* espacio para el botón hamburguesa */
+    }
+}
+
+/* ── InputNumber (faltaba en sidebar.css) ── */
+.p-inputnumber {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.p-inputnumber .p-inputtext {
+  flex: 1;
+  border-radius: 8px 0 0 8px !important;  /* consistente con tus inputs */
+  height: 2.5rem;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button-group {
+  width: 2rem;
+  height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button:first-child {
+  border-radius: 0 8px 0 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button:last-child {
+  border-radius: 0 0 8px 0 !important;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button .p-icon {
+  width: 0.65rem;
+  height: 0.65rem;
+  font-size: 0.65rem;
+}

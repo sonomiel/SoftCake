@@ -1,0 +1,139 @@
+/* ══════════════════════════════════
+   INICIO
+   ══════════════════════════════════ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.inicio-fade {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.inicio-wrapper {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ─── Encabezado ─── */
+.inicio-eyebrow {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #c4823c;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.inicio-title {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #2c1a0e;
+  line-height: 1.2;
+}
+
+.inicio-subtitle {
+  margin: 0;
+  color: #8c6a4a;
+  font-size: 0.95rem;
+}
+
+/* ─── Divider ─── */
+.inicio-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(196,130,60,0.3), transparent);
+  margin: 2rem 0;
+}
+
+/* ─── Labels de sección ─── */
+.inicio-section-label {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  color: #a08060;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ─── Tarjetas acceso rápido ─── */
+.inicio-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.inicio-card {
+  background: #fff;
+  border: 1px solid rgba(196,130,60,0.15);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 2px 10px rgba(44,26,14,0.06);
+}
+
+.inicio-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(196,130,60,0.18);
+  border-color: rgba(196,130,60,0.4);
+}
+
+.inicio-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.inicio-card-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #2c1a0e;
+}
+
+.inicio-card-desc {
+  font-size: 0.75rem;
+  color: #a08060;
+  margin-top: 0.15rem;
+}
+
+/* ─── Stats ─── */
+.inicio-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.inicio-stat {
+  background: linear-gradient(135deg, #2c1a0e, #3d2510);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: 0 4px 16px rgba(44,26,14,0.2);
+}
+
+.inicio-stat-label {
+  font-size: 0.7rem;
+  color: rgba(245,230,208,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.inicio-stat-value {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #c4823c;
+}

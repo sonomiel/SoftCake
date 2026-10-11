@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap');
+
+/* ─── Reset SOLO dentro del login ─── */
+.login-page *,
+.login-page *::before,
+.login-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  background: #fdf6ee;
+  font-family: 'Jost', sans-serif;
+  overflow: hidden;
+}
+
+/* ─── Panel decorativo izquierdo ─── */
+.login-page .login-deco {
+  flex: 1;
+  position: relative;
+  background: #2c1a0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.login-page .login-deco::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(196,130,60,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(140,70,20,0.3) 0%, transparent 55%);
+}
+
+.login-page .deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(196,130,60,0.2);
+}
+.login-page .deco-circle:nth-child(1) { width: 500px; height: 500px; top: -100px; left: -100px; }
+.login-page .deco-circle:nth-child(2) { width: 350px; height: 350px; bottom: -80px; right: -80px; }
+.login-page .deco-circle:nth-child(3) {
+  width: 200px; height: 200px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(196,130,60,0.4);
+}
+
+.login-page .deco-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.login-page .deco-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  filter: drop-shadow(0 4px 20px rgba(196,130,60,0.4));
+  animation: float 3s ease-in-out infinite;
+}
+
+.login-page .deco-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #f5e6d0;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.login-page .deco-subtitle {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(245,230,208,0.5);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.login-page .deco-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(196,130,60,0.6);
+  margin: 1.5rem auto;
+}
+
+/* ─── Panel formulario derecho ─── */
+.login-page .login-form-panel {
+  width: 460px;
+  min-width: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 3.5rem;
+  background: #fdf6ee;
+  position: relative;
+}
+
+.login-page .login-form-panel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(196,130,60,0.3), transparent);
+}
+
+.login-page .form-wrapper {
+  width: 100%;
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.login-page .form-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #c4823c;
+  margin-bottom: 0.75rem;
+}
+
+.login-page .form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #2c1a0e;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.login-page .form-tagline {
+  font-size: 0.82rem;
+  color: #9a7a5a;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+/* ─── Alertas ─── */
+.login-page .alert-expired {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff3e0;
+  border: 1px solid #e8a44a;
+  border-left: 3px solid #e8a44a;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.82rem;
+  color: #7a4a10;
+}
+
+.login-page .alert-error {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fef2f2;
+  border: 1px solid #f87171;
+  border-left: 3px solid #ef4444;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.82rem;
+  color: #7f1d1d;
+  animation: shake 0.4s ease;
+}
+
+/* ─── Campos ─── */
+.login-page .field {
+  margin-bottom: 1.4rem;
+}
+
+.login-page .field label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7a5a3a;
+  margin-bottom: 0.5rem;
+}
+
+.login-page .input-wrapper {
+  position: relative;
+}
+
+.login-page .input-wrapper i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c4823c;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.login-page .input-wrapper input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  border: 1px solid #e8d5bc;
+  border-radius: 8px;
+  background: #fff9f2;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  color: #2c1a0e;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.login-page .input-wrapper input::placeholder {
+  color: #c4a882;
+  font-weight: 300;
+}
+
+.login-page .input-wrapper input:focus {
+  border-color: #c4823c;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(196,130,60,0.1);
+}
+
+.login-page .toggle-password {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #c4a882;
+  padding: 0;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.login-page .toggle-password:hover { color: #c4823c; }
+
+/* ─── Botón submit ─── */
+.login-page .btn-login {
+  width: 100%;
+  padding: 0.95rem;
+  background: #2c1a0e;
+  color: #f5e6d0;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-page .btn-login::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(196,130,60,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.login-page .btn-login:hover::before { opacity: 1; }
+.login-page .btn-login:hover {
+  background: #3d2510;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(44,26,14,0.25);
+}
+.login-page .btn-login:active  { transform: translateY(0); }
+.login-page .btn-login:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.login-page .btn-login .spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(245,230,208,0.3);
+  border-top-color: #f5e6d0;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* ─── Footer ─── */
+.login-page .form-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8d5bc;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #b09070;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Animaciones ─── */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-6px); }
+  75%       { transform: translateX(6px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .login-page .login-deco { display: none; }
+  .login-page .login-form-panel { width: 100%; min-width: unset; padding: 2rem 1.5rem; }
+  .login-page .login-form-panel::before { display: none; }
+}
+
+/* ── InputNumber (faltaba en sidebar.css) ── */
+.p-inputnumber {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.p-inputnumber .p-inputtext {
+  flex: 1;
+  border-radius: 8px 0 0 8px !important;  /* consistente con tus inputs */
+  height: 2.5rem;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button-group {
+  width: 2rem;
+  height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button:first-child {
+  border-radius: 0 8px 0 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button:last-child {
+  border-radius: 0 0 8px 0 !important;
+}
+
+.p-inputnumber-stacked .p-inputnumber-button .p-icon {
+  width: 0.65rem;
+  height: 0.65rem;
+  font-size: 0.65rem;
+}
